@@ -1,0 +1,9 @@
+<block wx:for="{{arr}}" wx:for-item="data" wx:for-index="idx" wx:key="*this">
+  <view><checkbox/>{{idx}}:{{data}}</view>
+</block>
+
+<button bindtap="sort">排序</button>
+
+<button bindtap="getMusicInfo">获取音乐信息</button>
+<button bindtap="getMovieInfo">获取电影信息</button>
+

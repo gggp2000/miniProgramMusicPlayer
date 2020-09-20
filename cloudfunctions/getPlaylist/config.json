@@ -1,0 +1,9 @@
+{
+  "triggers": [
+    {
+      "name": "Renew_Playlist",
+      "type": "timer",
+      "config": "0 0 0 * * MON-FRI *"
+    }
+  ]
+}

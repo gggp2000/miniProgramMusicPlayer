@@ -1,0 +1,23 @@
+.controller {
+  display: flex;
+  align-items: center;
+  color: whitesmoke;
+  font-family: 'Courier New', Courier, monospace;
+}
+.slideBar {
+  position: relative;
+  flex: 1;
+  margin: 0rpx 15rpx;
+}
+.movableArea {
+  width:455rpx;
+  position: absolute;
+  height: 34rpx;
+  bottom: -14rpx;
+}
+.slider {
+  width: 36rpx;
+  height: 36rpx;
+  background: whitesmoke;
+  border-radius: 50%;
+}

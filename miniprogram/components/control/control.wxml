@@ -1,0 +1,11 @@
+<view class='controller'>
+  <text>{{time.currentTime}}</text>
+  <view class='slideBar'>
+  <movable-area class="movableArea">
+    <movable-view direction='horizontal' class='slider' damping='1000' x='{{movableViewDist}}' bindchange='onChange' bindtouchend="onTouchEnd"
+    />
+  </movable-area>
+  <progress stroke-width="4" backgroundColor="#969696" activeColor="#fff" percent="{{progress}}"></progress>
+  </view>
+  <text>{{time.totalTime}}</text>
+</view>

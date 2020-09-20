@@ -1,0 +1,11 @@
+<view class="music-container" style='background: url({{cover}}) no-repeat top/cover'></view>
+<view class='music-mask'></view>
+<view class='music-detail'>
+  <image class='cover' src="{{cover}}"></image>
+  <view class='listinfo'>
+    <view class='title'>{{title}}</view>  
+    <view class='tags'>{{tags}}</view>
+    <view class='desc'>{{desc}}</view>
+  </view>
+</view>
+<x-musiclist tracks="{{tracks}}"></x-musiclist>

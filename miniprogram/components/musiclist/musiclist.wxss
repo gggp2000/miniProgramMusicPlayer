@@ -1,0 +1,28 @@
+.track-info {
+  display:flex;
+  align-items: center;
+  background: honeydew;
+  width: 100%;
+  padding: 10rpx 20rpx;
+  font-size: 29rpx;
+  color: rgb(85, 80, 80);
+}
+
+.track-index {
+  width: 8%;
+  font-size: 34rpx;
+}
+
+.track-name{
+  text-shadow: lawngreen;
+  font-size: 34rpx;
+}
+
+.track-author {
+  font-size: 26rpx;
+  color: #bbb;
+}
+
+.playing{
+  color: #d43c33
+}

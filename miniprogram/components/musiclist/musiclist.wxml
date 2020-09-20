@@ -1,0 +1,9 @@
+<view wx:for="{{tracks}}" wx:key="id">
+  <view class='track-info {{item.id === playingId? "playing":""}}' bindtap="goToTrack" data-musicid="{{item.id}}" data-index="{{index}}">
+  	<view class='track-index'>{{index+1}}</view>
+  	<view class='track-name'>
+      <view>{{item.name}}</view>
+  		<view class='track-author {{item.id === playingId? "playing":""}}'>{{item.ar[0].name}} - {{item.al.name}}</view>
+    </view>
+	</view>
+</view>

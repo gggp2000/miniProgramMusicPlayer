@@ -1,0 +1,20 @@
+
+<view class='mask'></view>
+<view class='background' style="background:url({{music.al.picUrl}}) center/cover no-repeat"></view>
+
+<view class='player-disc {{isPlaying? "play":""}}' bindtap="switchLyric" hidden="{{!isHidden}}">
+    <image class='playerimg rotation {{isPlaying? "":"rotation-pause"}}' src='{{music.al.picUrl}}'></image>
+</view>
+
+<view class='controller'>
+  <view class='iconfont icon-shangyishoushangyige last' bindtap="prev"></view>
+  <view class='iconfont {{isPlaying? "icon-zanting":"icon-bofang"}} bofang' bindtap="playPauseMusic"></view>
+  <view class='iconfont icon-xiayigexiayishou next' bindtap="next"></view>
+</view>
+
+<view class='slideBar'>
+  <x-controller music='{{music}}' bind:musicEnd='next'/>
+</view>
+<view bindtap="switchLyric" hidden="{{isHidden}}" class="lyric">
+  <x-lyric lyric='{{lyric}}' />
+</view>
