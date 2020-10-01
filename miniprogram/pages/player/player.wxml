@@ -2,8 +2,13 @@
 <view class='mask'></view>
 <view class='background' style="background:url({{music.al.picUrl}}) center/cover no-repeat"></view>
 
-<view class='player-disc {{isPlaying? "play":""}}' bindtap="switchLyric" hidden="{{!isHidden}}">
+<view>
+  <view class='player-disc {{isPlaying? "play":""}}' bindtap="switchLyric" hidden="{{!isLyricHidden}}">
     <image class='playerimg rotation {{isPlaying? "":"rotation-pause"}}' src='{{music.al.picUrl}}'></image>
+  </view>
+  <view bindtap="switchLyric" hidden="{{isLyricHidden}}" class="lyric">
+  <x-lyric class='lyric' lyric='{{lyric}}' isLyricHidden='{{isLyricHidden}}' />
+  </view>
 </view>
 
 <view class='controller'>
@@ -13,8 +18,5 @@
 </view>
 
 <view class='slideBar'>
-  <x-controller music='{{music}}' bind:musicEnd='next'/>
-</view>
-<view bindtap="switchLyric" hidden="{{isHidden}}" class="lyric">
-  <x-lyric lyric='{{lyric}}' />
+  <x-controller music='{{music}}' bind:musicEnd='next' bind:timeUpdate='timeUpdate2Lyric'/>
 </view>

@@ -45,66 +45,70 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _bindMusicEvent(){
-      backgroundAudioManager.onPlay(()=>{
+    _bindMusicEvent() {
+      backgroundAudioManager.onPlay(() => {
         console.log("onPlay")
         isMoving = false
       })
-      backgroundAudioManager.onStop(()=>{
+      backgroundAudioManager.onStop(() => {
         console.log("onStop")
       })
-      backgroundAudioManager.onPause(()=>{
+      backgroundAudioManager.onPause(() => {
         console.log("onPause")
       })
-      backgroundAudioManager.onTimeUpdate(()=>{
-        console.log("onTimeUpdata")
-        if(!isMoving && (currentsec != Math.floor(backgroundAudioManager.currentTime))){
+      backgroundAudioManager.onTimeUpdate(() => {
+        // console.log("onTimeUpdata")
+        let currentTime = backgroundAudioManager.currentTime
+        if (!isMoving && (currentsec != Math.floor(currentTime))) {
           this.setData({
-            ["time.currentTime"]: this._formatTime(backgroundAudioManager.currentTime),
-            progress: backgroundAudioManager.currentTime / this.data.totalT * 100,
-            movableViewDist: (455-36)/this.data.rpxRadio * this.data.progress / 100
+            ["time.currentTime"]: this._formatTime(currentTime),
+            progress: currentTime / this.data.totalT * 100,
+            movableViewDist: (455 - 36) / this.data.rpxRadio * this.data.progress / 100
           })
-          currentsec = Math.floor(backgroundAudioManager.currentTime)
+          currentsec = Math.floor(currentTime)
+          this.triggerEvent('timeUpdate', {
+            currentTime
+          })
         }
-        
+
       })
-      backgroundAudioManager.onCanplay(()=>{
+      backgroundAudioManager.onCanplay(() => {
         console.log("onCanplay")
-        if(backgroundAudioManager.duration === undefined){
-          setTimeout(()=>{
+        if (backgroundAudioManager.duration === undefined) {
+          setTimeout(() => {
             this.setData({
               ["time.totalTime"]: this._formatTime(backgroundAudioManager.duration),
               totalT: backgroundAudioManager.duration
             })
           }, 1000)
-        }else{
+        } else {
           this.setData({
             ["time.totalTime"]: this._formatTime(backgroundAudioManager.duration),
             totalT: backgroundAudioManager.duration,
           })
         }
-        
+
       })
-      backgroundAudioManager.onWaiting(()=>{
+      backgroundAudioManager.onWaiting(() => {
         console.log("onWaiting")
       })
-      backgroundAudioManager.onEnded(()=>{
+      backgroundAudioManager.onEnded(() => {
         console.log("onEnded")
         this.triggerEvent("musicEnd")
       })
     },
 
-    onChange(event){
-      if(event.detail.source == 'touch'){
-        let newtime = event.detail.x * this.data.rpxRadio / (455-36) * this.data.totalT
+    onChange(event) {
+      if (event.detail.source == 'touch') {
+        let newtime = event.detail.x * this.data.rpxRadio / (455 - 36) * this.data.totalT
         this.data.newTime = newtime
-        this.data.movableViewDist = (455-36)/this.data.rpxRadio * newtime / this.data.totalT 
+        this.data.movableViewDist = (455 - 36) / this.data.rpxRadio * newtime / this.data.totalT
         isMoving = true
       }
     },
 
-    onTouchEnd(event){
-      console.log(this.data.newTime)
+    onTouchEnd(event) {
+      // console.log(this.data.newTime)
       this.setData({
         newTime: this.data.newTime,
         progress: this.data.newTime / this.data.totalT * 100,

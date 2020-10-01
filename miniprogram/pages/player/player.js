@@ -10,7 +10,7 @@ Page({
     music: Object,
     isPlaying: true,
     lyric: String,
-    isHidden: true
+    isLyricHidden: true
   },
   playPauseMusic() {
     if (this.data.isPlaying) {
@@ -84,8 +84,13 @@ Page({
         musicid: this.data.music.id
       }
     }).then((res)=>{
+      let lyric = "暂无歌词"
+      const lrc = res.result.lrc
+      if(lrc){
+        lyric = lrc.lyric
+      }
       this.setData({
-        lyric: res.result.lrc.lyric
+        lyric: lyric
       })
       // console.log(this.data.lyric)
     })
@@ -93,8 +98,12 @@ Page({
 
   switchLyric(){
     this.setData({
-      isHidden: !this.data.isHidden
+      isLyricHidden: !this.data.isLyricHidden
     })
+  },
+
+  timeUpdate2Lyric(event){
+    this.selectComponent('.lyric').update(event.detail.currentTime)
   },
 
   /**

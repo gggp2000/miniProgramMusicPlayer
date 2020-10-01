@@ -123,9 +123,9 @@
 }
 
 .lyric {
-  position: relative;
+  position: absolute;
   width: 600rpx;
   height: 600rpx;
   left: 50%;
-  transform: translate(-50%, 140rpx);
+  transform: translate(-50%, 100rpx);
 }
