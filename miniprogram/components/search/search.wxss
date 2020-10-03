@@ -6,7 +6,6 @@
 }
 
 .bar {
-  flex:1;
   border-radius: 50px;
   background-color: #f5f5f5;
   width: 100%;
@@ -14,7 +13,6 @@
 }
 
 .inputBar {
-  display: flex;
   text-align: left;
   color: #999;
 }
@@ -27,7 +25,4 @@
 
 .searchButton {
   flex: 1;
-  font-style: normal;
-  text-align: right;
-  margin-right: 50rpx;
 }

@@ -1,11 +1,17 @@
-// pages/blog/blog.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    modalShow: false
+  },
 
+  pinglun(){
+    this.setData({
+      modalShow: true
+    })
+    console.log(this.data.modalShow)
   },
 
   /**

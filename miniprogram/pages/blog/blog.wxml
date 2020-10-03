@@ -1,10 +1,20 @@
 <view class="container">
+  <!-- 头部-->
   <view class="header">
-    <view class="pinglun">
+    <view class="pinglun" bindtap="pinglun">
       <i class="iconfont icon-pinglun"></i>
     </view>
     <view class="sousuo">
       <x-search />
     </view>
   </view>
+  <!--底部弹出层-->
+  <x-bottom-modal modalShow="{{modalShow}}">
+    <view slot='slot2'>
+      <input type="text" placeholder="测试..."/>
+    </view>
+    <view slot='slot1'>
+      <button>插槽2</button>
+    </view>
+  </x-bottom-modal>
 </view>

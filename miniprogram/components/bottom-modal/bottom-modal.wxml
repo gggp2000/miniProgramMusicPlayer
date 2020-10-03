@@ -1,0 +1,8 @@
+<view class='container' hidden="{{!modalShow}}">
+  <view class='panel'>
+    <icon class='cancel' type='cancel' bindtap="cancel"></icon>
+    <!--slot插槽 具名插槽-->
+    <slot name='slot1'></slot>
+    <slot name='slot2'></slot>
+  </view>
+</view>
