@@ -1,2 +1,10 @@
-<!--pages/blog/blog.wxml-->
-<text>pages/blog/blog.wxml</text>
+<view class="container">
+  <view class="header">
+    <view class="pinglun">
+      <i class="iconfont icon-pinglun"></i>
+    </view>
+    <view class="sousuo">
+      <x-search />
+    </view>
+  </view>
+</view>

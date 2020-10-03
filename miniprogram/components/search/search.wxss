@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 20rpx;
+}
+
+.bar {
+  flex:1;
+  border-radius: 50px;
+  background-color: #f5f5f5;
+  width: 100%;
+  padding-left: 60rpx;
+}
+
+.inputBar {
+  display: flex;
+  text-align: left;
+  color: #999;
+}
+
+.search {
+  position: absolute;
+  color: #9f9f9f;
+  padding-left: 15rpx;
+}
+
+.searchButton {
+  flex: 1;
+  font-style: normal;
+  text-align: right;
+  margin-right: 50rpx;
+}
