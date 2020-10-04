@@ -1,49 +1,11 @@
+// pages/blogedit/blogedit.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    modalShow: false,
-    userInfo: {},
-  },
 
-  pinglun() {
-    wx.getSetting({
-      success: (res) => {
-        if (res.authSetting["scope.userInfo"]) {
-          wx.getUserInfo({
-            success: (res) => {
-              console.log(res.userInfo)
-              this.setData({
-                userInfo: res.userInfo
-              })
-            }
-          })
-          wx.navigateTo({
-            url: '../blogedit/blogedit',
-          })
-        } else {
-          this.setData({
-            modalShow: true
-          })
-        }
-      }
-    })
-  },
-
-  AuthSuccess(event) {
-    console.log(event.detail)
-    this.setData({
-      userInfo: event.detail
-    })
-    wx.navigateTo({
-      url: '../blogedit/blogedit',
-    })
-  },
-
-  AuthFail(){
-    console.log("用户未同意授权。")
   },
 
   /**

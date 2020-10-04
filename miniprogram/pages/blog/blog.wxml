@@ -9,12 +9,6 @@
     </view>
   </view>
   <!--底部弹出层-->
-  <x-bottom-modal modalShow="{{modalShow}}">
-    <view slot='slot2'>
-      <input type="text" placeholder="测试..."/>
-    </view>
-    <view slot='slot1'>
-      <button>插槽2</button>
-    </view>
-  </x-bottom-modal>
+  <x-login modalShow="{{modalShow}}" bind:userInfoSuccess="AuthSuccess"
+  bind:userInfoFail="AuthFail"/>
 </view>
