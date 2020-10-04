@@ -1,5 +1,6 @@
 .header {
   display: flex;
+<<<<<<< Updated upstream
   width: 100%;
   height: 100rpx;
   margin: 10rpx 20rpx;
@@ -14,4 +15,42 @@
   padding-left: 10rpx;
   width: 100%;
   text-align: center;
+=======
+  align-items: center;
+  padding: 0 20rpx;
+  height: 100rpx;
+  top:0;
+  left:0;
+  width:100%;
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+.header .icon-pinglun {
+  font-size: 48rpx;
+}
+
+.publish-container {
+  display: flex;
+}
+
+.search-container {
+  flex: 1;
+}
+
+.searchInput {
+  background-color: rgb(250, 250, 250);
+  border-radius: 5%;
+}
+
+.searchButton {
+  color:white;
+  background-color: brown;
+  height: 60rpx;
+  width: 30%;
+}
+
+.pinglun {
+  font-size: 50rpx;
+>>>>>>> Stashed changes
 }
