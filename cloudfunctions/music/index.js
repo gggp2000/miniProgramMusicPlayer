@@ -8,7 +8,7 @@ cloud.init({
 const TcbRouter = require('tcb-router')
 const axios = require('axios')
 const BASE_URL = 'https://apis.imooc.com'
-const ICODE = 'icode=31121CD00A1B5A6E'
+const ICODE = 'icode=9D4E024D40B149F6'
 
 // 云函数入口函数
 exports.main = async (event, context) => {
