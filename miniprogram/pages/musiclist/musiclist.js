@@ -24,6 +24,7 @@ Page({
         $url: 'musiclist'
       }
     }).then((res)=>{
+      console.log(res)
       this.setData({
         tracks: res.result.playlist.tracks,
         cover: res.result.playlist.coverImgUrl,
