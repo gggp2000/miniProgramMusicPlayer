@@ -11,7 +11,7 @@ const pl = db.collection('playlist')
 const MAX_LIMIT = 10
 
 const axios = require('axios')
-const URL = 'https://apis.imooc.com/personalized?icode=0AF045A7A6542107'
+const URL = 'https://apis.imooc.com/personalized?icode=9A774351FF9FA99B'
 
 // 云函数入口函数
 exports.main = async (event, context) => {
